@@ -16,13 +16,13 @@ const userSchema = new Schema({
     required: true,
   },
   age: {
-    type: String,
+    type: Number,
     required: true,
   },
   organisationName: String,
   contactInfo: {
-    email: { type: String, trim: true },
-    discord: { type: String, trim: true },
+    email: { type: email, trim: true ,required : true },
+    discord: { type: String, trim: true ,required : true},
     instagram: { type: String, trim: true },
     youTube: { type: String, trim: true },
   },
