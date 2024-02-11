@@ -21,7 +21,7 @@ const userSchema = new Schema({
   },
   organisationName: String,
   contactInfo: {
-    email: { type: email, trim: true ,required : true },
+    email: { type: String, trim: true ,required : true },
     discord: { type: String, trim: true ,required : true},
     instagram: { type: String, trim: true },
     youTube: { type: String, trim: true },

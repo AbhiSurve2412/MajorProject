@@ -1,0 +1,43 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+<div class="sign-up-form">
+  <h2>Sign Up</h2>
+  <form action="/home" method="post">
+    <label for="inGameName">In-Game Name:</label><br>
+    <input type="text" id="inGameName" name="player[inGameName]" required><br>
+    
+    <label for="inGameId">In-Game ID:</label><br>
+    <input type="text" id="inGameId" name="player[inGameId]" required><br>
+    
+    <label for="ProfileImage">Profile Image URL:</label><br>
+    <input type="text" id="ProfileImage" name="player[ProfileImage]"><br>
+    
+    <label for="realName">Real Name:</label><br>
+    <input type="text" id="realName" name="player[realName]" required><br>
+    
+    <label for="age">Age:</label><br>
+    <input type="text" id="age" name="player[age]" required><br>
+    
+    <label for="organisationName">Organisation Name:</label><br>
+    <input type="text" id="organisationName" name="player[organisationName]"><br>
+    
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="player[email]"><br>
+    
+    <label for="discord">Discord:</label><br>
+    <input type="text" id="discord" name="player[discord]"><br>
+    
+    <label for="instagram">Instagram:</label><br>
+    <input type="text" id="instagram" name="player[instagram]"><br>
+    
+    <label for="youTube">YouTube:</label><br>
+    <input type="text" id="youTube" name="player[youTube]"><br>
+    
+    <label for="about">About:</label><br>
+    <textarea id="about" name="player[about]" required></textarea><br>
+    
+    <button type="submit">Sign Up</button>
+  </form>
+</div>
+
+</body>
