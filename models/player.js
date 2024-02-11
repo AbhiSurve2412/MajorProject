@@ -2,6 +2,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const playerSchema = new Schema({
+  email : {
+    type : String,
+    required : true,
+  },
+  password : {
+    type : String,
+    required : true,
+  },
   inGameName: {
     type: String,
     required: true,
@@ -21,8 +29,7 @@ const playerSchema = new Schema({
   },
   organisationName: String,
   contactInfo: {
-    email: { type: String, trim: true ,required : true },
-    discord: { type: String, trim: true ,required : true},
+    discord: { type: String, trim: true },
     instagram: { type: String, trim: true },
     youTube: { type: String, trim: true },
   },
@@ -60,7 +67,6 @@ const playerSchema = new Schema({
   ],
   about: {
     type: String,
-    required: true,
   },
 });
 
