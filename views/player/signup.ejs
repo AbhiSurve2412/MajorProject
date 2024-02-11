@@ -3,6 +3,14 @@
 <div class="sign-up-form">
   <h2>Sign Up</h2>
   <form action="/home" method="post">
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="player[email]"><br>
+
+    <label for="password">Password</label><br>
+    <input type="password" id="password" name="player[password]" required><br>
+    
+    
     <label for="inGameName">In-Game Name:</label><br>
     <input type="text" id="inGameName" name="player[inGameName]" required><br>
     
@@ -17,24 +25,6 @@
     
     <label for="age">Age:</label><br>
     <input type="text" id="age" name="player[age]" required><br>
-    
-    <label for="organisationName">Organisation Name:</label><br>
-    <input type="text" id="organisationName" name="player[organisationName]"><br>
-    
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="player[email]"><br>
-    
-    <label for="discord">Discord:</label><br>
-    <input type="text" id="discord" name="player[discord]"><br>
-    
-    <label for="instagram">Instagram:</label><br>
-    <input type="text" id="instagram" name="player[instagram]"><br>
-    
-    <label for="youTube">YouTube:</label><br>
-    <input type="text" id="youTube" name="player[youTube]"><br>
-    
-    <label for="about">About:</label><br>
-    <textarea id="about" name="player[about]" required></textarea><br>
     
     <button type="submit">Sign Up</button>
   </form>

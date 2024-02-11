@@ -3,10 +3,8 @@ const app = express();
 const mongoose = require('mongoose');
 const path = require('path');
 const ejsMate = require('ejs-mate');
+const player = require('./models/player'); // Require player model
 
-
-//models
-const Player = require('./models/player');
 
 // Set the view engine to EJS
 app.engine("ejs",ejsMate);
@@ -14,7 +12,6 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 
-//req data parse
 app.use(express.urlencoded({ extended: true }));
 
 
@@ -48,7 +45,7 @@ app.post("/home", async (req, res) => {
     // await newPlayer.save();
     console.log(newPlayer);
     res.redirect("/")
-});  
+});
 
 // Start the server
 app.listen(8080, () => {
