@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 const path = require('path');
 const ejsMate = require('ejs-mate');
 
+//models
+const User = require('../models/User');
+
 // Set the view engine to EJS
 app.engine("ejs",ejsMate);
 app.set('view engine', 'ejs');
@@ -23,13 +26,26 @@ async function main(){
     await mongoose.connect(MONGO_URL);
 }
 
-
-
-
-// Define route to render boilerplate.ejs
+// Define route to render idex page before login 
 app.get("/", (req, res) => {
     res.render('player/index.ejs');
 });
+
+//user route
+//get request for signupAsPlayer
+app.get("/player/signup", (req,res)=>{
+    res.render("player/signup");
+});
+
+//post request to store in DB
+app.post("/player/signup", async (req, res)=>{
+    let player = req.body;
+    console.log(player);
+});
+
+
+
+
 
 // Start the server
 app.listen(8080, () => {
