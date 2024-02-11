@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+const playerSchema = new Schema({
   inGameName: {
     type: String,
     required: true,
@@ -21,7 +21,7 @@ const userSchema = new Schema({
   },
   organisationName: String,
   contactInfo: {
-    email: { type: email, trim: true ,required : true },
+    email: { type: String, trim: true ,required : true },
     discord: { type: String, trim: true ,required : true},
     instagram: { type: String, trim: true },
     youTube: { type: String, trim: true },
@@ -64,5 +64,5 @@ const userSchema = new Schema({
   },
 });
 
-const User = mongoose.model("User", userSchema);
-module.exports = User;
+module.exports = mongoose.model("Player", playerSchema);
+ 

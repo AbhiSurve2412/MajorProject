@@ -4,14 +4,19 @@ const mongoose = require('mongoose');
 const path = require('path');
 const ejsMate = require('ejs-mate');
 
+
 //models
-const User = require('../models/User');
+const Player = require('./models/player');
 
 // Set the view engine to EJS
 app.engine("ejs",ejsMate);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
+
+//req data parse
+app.use(express.urlencoded({ extended: true }));
+
 
 // Connect to MongoDB
 let MONGO_URL = "mongodb://127.0.0.1:27017/majorProject";
@@ -26,26 +31,24 @@ async function main(){
     await mongoose.connect(MONGO_URL);
 }
 
-// Define route to render idex page before login 
+
+
+// main page before login
 app.get("/", (req, res) => {
     res.render('player/index.ejs');
 });
 
-//user route
-//get request for signupAsPlayer
-app.get("/player/signup", (req,res)=>{
-    res.render("player/signup");
+//signup form for player
+app.get("/player/signup", (req, res) => {
+    res.render('player/signup.ejs');
 });
 
-//post request to store in DB
-app.post("/player/signup", async (req, res)=>{
-    let player = req.body;
-    console.log(player);
-});
-
-
-
-
+app.post("/home", async (req, res) => {
+    const newPlayer = new player(req.body.player);
+    // await newPlayer.save();
+    console.log(newPlayer);
+    res.redirect("/")
+});  
 
 // Start the server
 app.listen(8080, () => {
