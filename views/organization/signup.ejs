@@ -1,0 +1,31 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+<div class="container">
+  <div class="organization-sign-up-form">
+    <h2>Organization Sign Up</h2>
+    <form action="/organization/signup" method="post">
+      <div class="mb-3">
+        <label for="organizationName" class="form-label">Organization Name</label>
+        <input type="text" class="form-control" id="organizationName" name="organization[organizationName]" required>
+      </div>
+      <div class="mb-3">
+        <label for="founderUserName" class="form-label">Founder User Name</label>
+        <input type="text" class="form-control" id="founderUserName" name="organization[founderUserName]" required>
+      </div>
+      <div class="mb-3">
+        <label for="establishDate" class="form-label">Establish Date</label>
+        <input type="date" class="form-control" id="establishDate" name="organization[establishDate]" required>
+      </div>
+      <div class="mb-3">
+        <label for="profileImage" class="form-label">Profile Image URL</label>
+        <input type="text" class="form-control" id="profileImage" name="organization[profileImage]">
+      </div>
+      <div class="mb-3">
+        <label for="about" class="form-label">About</label>
+        <textarea class="form-control" id="about" name="organization[about]" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+</body>
