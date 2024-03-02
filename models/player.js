@@ -1,7 +1,12 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const passportLocalMongoose = require("passport-local-mongoose");
 
-const userSchema = new Schema({
+const playerSchema = new Schema({
+  email : {
+    type : String,
+    required : true,
+  },
   inGameName: {
     type: String,
     required: true,
@@ -16,12 +21,11 @@ const userSchema = new Schema({
     required: true,
   },
   age: {
-    type: String,
+    type: Number,
     required: true,
   },
   organisationName: String,
   contactInfo: {
-    email: { type: String, trim: true },
     discord: { type: String, trim: true },
     instagram: { type: String, trim: true },
     youTube: { type: String, trim: true },
@@ -60,9 +64,9 @@ const userSchema = new Schema({
   ],
   about: {
     type: String,
-    required: true,
   },
 });
 
-const User = mongoose.model("User", userSchema);
-module.exports = User;
+playerSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
+module.exports = mongoose.model("Player", playerSchema);;
+ 
